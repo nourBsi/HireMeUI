@@ -1,0 +1,85 @@
+<!-- Responsive navbar-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container px-5">
+    <a class="navbar-brand" href="#!">HireMe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <li class="nav-item"><a class="nav-link" href="#!">
+           Log in
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header-->
+<header  class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+         style="background-image: url('././assets/img/bf3f7389880cd5f60b745972c2ccbd43.jpg');">
+  <div class="container px-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-lg-6">
+        <div class="text-center my-5 text-white">
+          <h1 class="display-5 fw-bolder mb-2">Transform Your Job Search Experience</h1>
+          <p class="lead mb-4">Effortlessly explore and tailor your job search with our platform, equipped with intuitive features for a seamless experience!</p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <a class="btn btn-primary btn-lg px-4 me-sm-3" routerLink="/signup">Start Job Hunting</a>
+            <a class="btn btn-outline-light btn-lg px-4"  (click)="scroll(target)" >Discover More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+<div class="main" >
+
+  <div class="section text-center">
+    <div class="container ">
+      <div class="row justify-content-md-center">
+        <div class="col-md-8 mt-3">
+          <h2 class="title">What is ou website for?</h2>
+          <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+          <br>
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <br>
+      <div class="row" #target>
+        <div class="col">
+          <div class="info">
+            <div class="icon icon-danger">
+              <img src="assets/img/recruitment.png" height="100" width="100">
+            </div>
+            <div class="description">
+              <h4 class="info-title">Recruiting ?</h4>
+              <p class="description">In our website you can find qualified candidates for your job offer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="info">
+            <div class="icon icon-danger">
+              <img src="assets/img/job-description.png" height="100" width="100">
+            </div>
+            <div class="description">
+              <h4 class="info-title">Looking for a job ?</h4>
+              <p>In our website you can find job offers that match your profile.</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+<br>
+
+</div>
