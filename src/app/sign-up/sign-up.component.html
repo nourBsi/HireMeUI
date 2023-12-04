@@ -19,7 +19,7 @@
          <div class="upload">
            <img src="././assets/img/noprofil.jpg" width="100" height="100">
            <div class="round">
-             <input type="file">
+             <input type="file" (change)="onFileSelected($event)">
              <i class="fa fa-camera" style="color: #fff;"></i>
            </div>
 
@@ -27,33 +27,33 @@
          </div>
           <!-- Name input-->
           <div class="form-floating mb-2 mt-2">
-            <input class="form-control" id="prenom" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+            <input class="form-control" ngModel id="prenom" name="prenom" type="text" placeholder="Enter your name..."  data-sb-validations="required" />
             <label for="prenom">First name</label>
             <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
           </div>
           <!-- Name input-->
           <div class="form-floating mb-2 mt-2">
-            <input class="form-control" id="nom" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+            <input class="form-control" ngModel id="nom" name="nom"  type="text" placeholder="Enter your name..." data-sb-validations="required" />
             <label for="nom">Last name</label>
             <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
           </div>
           <!-- Email address input-->
           <div class="form-floating mb-2">
-            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+            <input class="form-control" ngModel id="email" name="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
             <label for="email">Email address</label>
             <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
             <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
           </div>
           <!-- Phone number input-->
           <div class="form-floating mb-2">
-            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-            <label for="phone">Phone number</label>
+            <input class="form-control" ngModel id="tel" name="tel" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+            <label for="tel">Phone number</label>
             <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
           </div>
           <!-- password input-->
 
           <div class="form-floating mb-2">
-            <input class="form-control" id="pwd" type="password" placeholder="(123) 456-7890" data-sb-validations="required" />
+            <input class="form-control" ngModel id="pwd" name="mdp" type="password" placeholder="(123) 456-7890" data-sb-validations="required" />
             <label for="pwd">Password</label>
             <div class="invalid-feedback" data-sb-feedback="phone:required">The password  is required.</div>
 
@@ -61,18 +61,22 @@
           <!-- password validation input-->
 
           <div class="form-floating mb-2">
-          <input class="form-control" id="pwdValidation" type="password" placeholder="(123) 456-7890" data-sb-validations="required" />
+          <input class="form-control" ngModel id="pwdValidation" type="password" placeholder="(123) 456-7890" data-sb-validations="required" />
           <label for="pwdValidation">Password validation</label>
           <div class="invalid-feedback" data-sb-feedback="phone:required">The Password validation is required.</div>
         </div>
           <!-- Secteur  input-->
           <div class="form-floating mb-2">
-            <input class="form-control" id="secteur" type="text" placeholder="(123) 456-7890" data-sb-validations="required" />
+            <input class="form-control" ngModel id="secteur" name="secteur" type="text" placeholder="(123) 456-7890" data-sb-validations="required" />
             <label for="secteur">Field</label>
             <div class="invalid-feedback" data-sb-feedback="phone:required">This field is required.</div>
           </div>
           <!-- Message input-->
-
+          <div class="form-floating mb-2">
+            <input class="form-control" ngModel id="datenaiss" name="date_naissance" type="date" placeholder="(123) 456-7890" data-sb-validations="required" />
+            <label for="datenaiss">Date of birth</label>
+            <div class="invalid-feedback" data-sb-feedback="phone:required">This field is required.</div>
+          </div>
           <!-- Submit success message-->
           <!---->
           <!-- This is what your users will see when the form-->
