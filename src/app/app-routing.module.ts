@@ -6,6 +6,11 @@ import {ProfileComponent} from "./profile/profile.component";
 import {JoinUsComponent} from "./join-us/join-us.component";
 import {SignInCComponent} from "./sign-in-c/sign-in-c.component";
 import {ProfileGuard} from "../profile.guard";
+import {ProfileGuard2} from "../profile.guard2";
+
+import {SignUpRComponent} from "./sign-up-r/sign-up-r.component";
+import {SignInRComponent} from "./sign-in-r/sign-in-r.component";
+import {HomeRComponent} from "./home-r/home-r.component";
 
 const routes: Routes = [
   {
@@ -26,6 +31,14 @@ const routes: Routes = [
     component: SignInCComponent,
   },
   {
+    path: 'rlogin',
+    component: SignInRComponent,
+  },
+  {
+    path: 'signupr',
+    component: SignUpRComponent,
+  },
+  {
     path: 'profile',
     component: ProfileComponent,
     canActivate: [ProfileGuard]
@@ -34,6 +47,11 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [ProfileGuard]
+  },
+  {
+    path: 'homer',
+    component: HomeRComponent,
+    canActivate: [ProfileGuard2]
   },
 ];
 

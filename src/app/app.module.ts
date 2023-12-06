@@ -12,6 +12,11 @@ import { JoinUsComponent } from './join-us/join-us.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
 import { SignInCComponent } from './sign-in-c/sign-in-c.component';
+import { SignUpRComponent } from './sign-up-r/sign-up-r.component';
+import {DatePipe} from "@angular/common";
+import { SignInRComponent } from './sign-in-r/sign-in-r.component';
+import { HomeRComponent } from './home-r/home-r.component';
+import { NavbarRComponent } from './navbar-r/navbar-r.component';
 
 
 @NgModule({
@@ -23,6 +28,10 @@ import { SignInCComponent } from './sign-in-c/sign-in-c.component';
     AddCandidateComponent,
     JoinUsComponent,
     SignInCComponent,
+    SignUpRComponent,
+    SignInRComponent,
+    HomeRComponent,
+    NavbarRComponent,
 
 
   ],
@@ -34,6 +43,7 @@ import { SignInCComponent } from './sign-in-c/sign-in-c.component';
     HttpClientModule
   ],
   providers: [
+    [DatePipe]
 
   ],
   bootstrap: [AppComponent]

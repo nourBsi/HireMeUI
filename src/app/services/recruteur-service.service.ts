@@ -7,21 +7,14 @@ import {Recruteur} from "../models/Recruteur.model";
 @Injectable({
   providedIn: 'root'
 })
-export class LoginServiceService {
+export class RecruteurServiceService {
+  link="http://127.0.0.1:8080/api";
 
   constructor(private http: HttpClient) { }
+  signUpr(recruteur:Recruteur): Observable<any>{
+    // console.log(JSON.stringify(candidat));
 
-
-  linkc="http://127.0.0.1:8080/api";
-
-
-  checkCandidate(candidat:Candidat): Observable<any>{
-    return this.http.post(this.linkc+"/loginCandidat",candidat);
+    return this.http.post(this.link+"/addRecruteur",recruteur);
 
   }
-  checkRecruteur(recruteur:Recruteur):Observable<any>{
-    return this.http.post(this.linkc+"/loginRecruteur",recruteur);
-
-  }
-
 }
