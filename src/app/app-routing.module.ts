@@ -7,57 +7,38 @@ import {JoinUsComponent} from "./join-us/join-us.component";
 import {SignInCComponent} from "./sign-in-c/sign-in-c.component";
 import {ProfileGuard} from "../profile.guard";
 
-
 const routes: Routes = [
   {
     path: '',
-    canActivate: [ProfileGuard],
-    children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-      },
-      {
-        path: 'home',
-        component: HomeComponent,
-        canActivate: [ProfileGuard],
-      },
-      {
-        path: 'profile',
-        loadChildren: () =>
-          import('./profile/profile.module').then((m) => m.ProfileModule),
-        canActivate: [ProfileGuard],
-      },
-      // Add other routes as needed
-    ],
-
-
-  },
-  {path:'join-us',
-    component:JoinUsComponent
-  },
-  {path:'home',
-    component:HomeComponent,
-    canActivate:[ProfileGuard]
-  },
-  {path:'signup',
-    component:SignUpComponent
+    pathMatch: 'full',
+    redirectTo:'home'
   },
   {
-    path:'profile',
-    component:ProfileComponent,
-    canActivate:[ProfileGuard]
+    path: 'join-us',
+    component: JoinUsComponent,
   },
   {
-    path:'clogin',
-    component:SignInCComponent
-  }
+    path: 'signup',
+    component: SignUpComponent,
+  },
+  {
+    path: 'clogin',
+    component: SignInCComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [ProfileGuard]
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [ProfileGuard]
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}
