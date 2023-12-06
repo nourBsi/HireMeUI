@@ -11,6 +11,8 @@ import {ProfileGuard2} from "../profile.guard2";
 import {SignUpRComponent} from "./sign-up-r/sign-up-r.component";
 import {SignInRComponent} from "./sign-in-r/sign-in-r.component";
 import {HomeRComponent} from "./home-r/home-r.component";
+import { UpdateCandidateComponent } from './update-candidate/update-candidate.component';
+
 
 const routes: Routes = [
   {
@@ -47,6 +49,11 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [ProfileGuard]
+  },
+  {
+     path: 'update-candidate',
+     component: UpdateCandidateComponent ,
+     canActivate: [ProfileGuard]
   },
   {
     path: 'homer',

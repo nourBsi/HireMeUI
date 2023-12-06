@@ -12,6 +12,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
 import { SignInCComponent } from './sign-in-c/sign-in-c.component';
+import { UpdateCandidateComponent } from './update-candidate/update-candidate.component';
 import { SignUpRComponent } from './sign-up-r/sign-up-r.component';
 import {DatePipe} from "@angular/common";
 import { SignInRComponent } from './sign-in-r/sign-in-r.component';
@@ -28,6 +29,7 @@ import { NavbarRComponent } from './navbar-r/navbar-r.component';
     AddCandidateComponent,
     JoinUsComponent,
     SignInCComponent,
+    UpdateCandidateComponent,
     SignUpRComponent,
     SignInRComponent,
     HomeRComponent,

@@ -1,5 +1,5 @@
 export class Candidat {
-  id: number;
+  id_condidat: number;
   prenom: string;
   nom: string;
   email: string;
@@ -8,6 +8,8 @@ export class Candidat {
   secteur: string;
   description: string;
   date_naissance: Date;
+  descPhoto:String;
+  Entreprise:String
   photoBase64: File|null;
 
   constructor() {
