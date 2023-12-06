@@ -18,4 +18,5 @@ export class ServiceCandidatService {
     return this.http.post(this.link+"/addCandidat",candidat);
 
   }
+  
 }

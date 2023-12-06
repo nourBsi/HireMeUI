@@ -21,6 +21,7 @@ export class SignUpComponent {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
+        this.candidat.descPhoto = e.target.result.split(',')[0];
         this.candidat.photoBase64 = e.target.result.split(',')[1];
       };
       reader.readAsDataURL(file);

@@ -44,18 +44,18 @@
     <div class="container">
       <div class="owner">
         <div class="avatar">
-          <img src="../assets/img/user.png" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-        </div>
+          <img src="{{ candidat.photoBase64 }}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+        </div>        
         <div class="name">
-          <h4 class="title">User name <br /></h4>
-          <h6 class="description">specialite</h6>
+          <h4 class="title">{{ candidat.nom }} {{ candidat.prenom }}  <br /></h4>
+          <h6 class="description">{{candidat.secteur }} </h6>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6 ml-auto mr-auto text-center">
-          <p>Description</p>
+          <p>{{ candidat.description }}</p>
           <br />
-          <button class="btn btn-outline-default btn-round" href="#"><i class="fa fa-cog"></i> Settings</button>
+          <button class="btn btn-outline-default btn-round" routerLink="/update-candidate"><i class="fa fa-cog"></i> Settings</button>
         </div>
       </div>
       <br />

@@ -12,6 +12,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
 import { SignInCComponent } from './sign-in-c/sign-in-c.component';
+import { UpdateCandidateComponent } from './update-candidate/update-candidate.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { SignInCComponent } from './sign-in-c/sign-in-c.component';
     AddCandidateComponent,
     JoinUsComponent,
     SignInCComponent,
+    UpdateCandidateComponent,
 
 
   ],
