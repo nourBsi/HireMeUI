@@ -21,5 +21,9 @@ export class ProfileComponent implements OnInit {
       // Handle the case where user data is not found in localStorage
       console.error('User data not found in localStorage');
     }
+    console.log(this.candidat.photoBase64);
+    console.log(this.candidat.descPhoto);
+
+
   }
 }
