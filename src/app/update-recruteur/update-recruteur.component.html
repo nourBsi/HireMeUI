@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+
+<div class="page-header page-header-xs" data-parallax="true"
+     style="background-image: url('../assets/img/profile.jpg');">
+  <div class="filter"></div>
+</div>
+<div class="section profile-content">
+  <div class="container">
+    <div class="owner">
+      <div class="avatar">
+        <img [src]="imageSource"  height="150" width="148">
+        <div class="round">
+          <input type="file" (change)="onFileSelected($event)">
+          <i class="fa fa-camera" style="color: #fff;"></i>
+        </div>
+      </div>
+
+      <form #updateRecruiterForm="ngForm" id="updateRecruiter"  (ngSubmit)="updateRecruiter(updateRecruiterForm.value)">
+        Update your profile
+        <div class="form-floating mb-2 mt-2 w-50 col-md-3 offset-md-3">
+          <textarea class="form-control"  id="description" [(ngModel)]="recruteur.description" name="description" type="text" placeholder="Enter your bio..." data-sb-validations="required" rows="4"></textarea>
+          <label for="description">Bio</label>
+          <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+        </div>
+        <div class="form-floating mb-2 mt-2">
+          <input class="form-control" [(ngModel)]="recruteur.prenom" id="prenom" name="prenom" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+          <label for="prenom">First name</label>
+          <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+        </div>
+        <div class="form-floating mb-2 mt-2">
+          <input class="form-control" [(ngModel)]="recruteur.nom" id="nom" name="nom" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+          <label for="nom">First name</label>
+          <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+        </div>
+        <div class="form-floating mb-2 mt-2">
+          <input class="form-control" [(ngModel)]="recruteur.secteur" id="secteur" name="secteur" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+          <label for="secteur">secteur</label>
+          <div class="invalid-feedback" data-sb-feedback="name:secteur">A name is required.</div>
+        </div>
+
+        <div class="form-floating mb-2 mt-2">
+          <input class="form-control" [(ngModel)]="recruteur.date_naissance" id="date_naissance" name="date_naissance" type="date" placeholder="Enter your date of birth..." data-sb-validations="required" />
+          <label for="date_naissance">Date of birth</label>
+          <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+        </div>
+        <div class="row">
+          <div class="d-grid"><button class="btn btn-primary btn-lg " id="submitButton" type="submit" >Submit</button></div>
+        </div>
+        <br />
+
+      </form>
+
+
+
+    </div>
+
+  </div>
+</div>

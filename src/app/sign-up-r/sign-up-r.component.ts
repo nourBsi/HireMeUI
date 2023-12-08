@@ -16,6 +16,7 @@ export class SignUpRComponent {
   selectedFile: File | null = null;
   recruteur: Recruteur = new Recruteur();
   date:Date;
+  imageSource:string="././assets/img/noprofil.jpg";
 
   constructor(private signupService: RecruteurServiceService, private router: Router,public datepipe: DatePipe) { }
 
@@ -26,11 +27,15 @@ export class SignUpRComponent {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
+        this.imageSource=e.target.result;
         this.recruteur.descPhoto = e.target.result.split(',')[0];
         this.recruteur.photoBase64 = e.target.result.split(',')[1];
-      };
+      }
       reader.readAsDataURL(file);
-    }
+    }else{
+      this.imageSource="././assets/img/noprofil.jpg";
+
+    };
   }
 
   signuprAttempt(val: any) {
@@ -52,10 +57,10 @@ export class SignUpRComponent {
     this.recruteur.date_inscri = new Date();
    this.datepipe.transform( this.recruteur.date_inscri, 'yyyy-MM-dd');
 
-    console.log(this.recruteur);
 
     this.signupService.signUpr(this.recruteur).subscribe(() => {
       console.log("added");
     });
+    this.router.navigate(['join-us'])
   }
 }

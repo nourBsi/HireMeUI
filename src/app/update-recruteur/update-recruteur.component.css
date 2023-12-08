@@ -1,0 +1,128 @@
+/* Add your styles here */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-logo {
+  max-width: 50px; /* Adjust the width as needed */
+}
+
+.page-header {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  min-height: 250px; /* Adjust the height as needed */
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.profile-content .owner {
+  text-align: center;
+}
+
+.profile-content .avatar img {
+  max-width: 150px; /* Adjust the width as needed */
+  border-radius: 50%;
+}
+
+.profile-content .name {
+  margin-top: 20px;
+}
+
+.profile-content .nav-tabs-navigation {
+  margin-top: 40px;
+}
+
+/* Add more styles as needed */
+
+/* Example additional style for the button */
+.btn-outline-default.btn-round {
+  color: #f96332;
+  border-color: #f96332;
+}
+
+/* Example additional style for the description */
+.profile-content .row p {
+  font-size: 16px;
+}
+/* profile.component.css */
+
+.navbar-brand {
+  color: white; /* Couleur du texte */
+  font-weight: bold; /* Épaisseur du texte */
+  font-size: 24px; /* Taille de la police */
+  margin-top: 5px; /* Marge en haut pour décaler le texte vers le bas */
+}
+
+/* profile.component.css */
+
+.navbar-toggler {
+  background-color: transparent; /* Pour rendre le fond transparent */
+  border: none; /* Pour supprimer la bordure */
+}
+
+.navbar-toggler .navbar-toggler-bar {
+  background-color: white; /* Couleur des barres */
+  width: 24px; /* Largeur des barres */
+  height: 3px; /* Hauteur des barres */
+  margin: 6px 0; /* Marge autour des barres */
+}
+
+/* Vous n'avez pas besoin de définir ces styles si vous utilisez FontAwesome pour les icônes */
+.navbar-toggler i {
+  color: white; /* Couleur de l'icône */
+  font-size: 24px; /* Taille de l'icône */
+}
+/* profile.component.css */
+
+.profile-content .owner {
+  text-align: center;
+  margin-bottom: 20px; /* Ajoutez une marge en bas pour créer de l'espace entre la photo de profil et l'avatar */
+}
+
+.profile-content .avatar {
+  text-align: center;
+  position: relative;
+  top: -100px; /* Adjust the value as needed */
+}
+
+.profile-content .avatar img {
+  max-width: 150px; /* Ajustez la largeur si nécessaire */
+  border-radius: 50%;
+  border: 5px solid white; /* Ajoutez une bordure blanche comme celle de la photo de profil */
+}
+.avatar{
+  width: 100px;
+  position: relative;
+  margin: auto;
+}
+.avatar img{
+  border-radius: 50%;
+  border: 6px solid #eaeaea;
+}
+.avatar .round{
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  background: #00B4FF;
+  width: 32px;
+  height: 32px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar .round input[type="file"]{
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+
+}
+.profile-content {
+  padding-top: 0;
+  position: relative;
+  z-index: 1  ;
+}

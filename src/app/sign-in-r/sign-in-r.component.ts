@@ -25,7 +25,7 @@ export class SignInRComponent {
         this.returnedRecruteur = data;
         window.localStorage.setItem('userr', JSON.stringify(this.returnedRecruteur));
         console.log(this.returnedRecruteur);
-        this.router.navigate(['home']);
+        this.router.navigate(['homer']);
       },
       (error) => {
 

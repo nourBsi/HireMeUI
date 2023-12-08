@@ -11,7 +11,7 @@ export class Candidat {
   descPhoto:String;
   Entreprise:String
   photoBase64: File|null;
-
+  date_inscri:Date;
   constructor() {
   }
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Candidat } from '../models/Candidat.model';
 import {HttpClient} from "@angular/common/http";
+import {ServiceCandidatService} from "../services/service-candidat.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -9,32 +11,52 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./update-candidate.component.css']
 })
 export class UpdateCandidateComponent {
+  startDate: Date;
+  selectedFile: File | null = null;
+
   candidat: Candidat = new Candidat();
-  constructor(private http: HttpClient) {}
+  constructor(private service:ServiceCandidatService,private router:Router) {}
+imageSource:string;
 
   ngOnInit(): void {
     // Récupération des données stockées dans le localStorage
     const candidatData = localStorage.getItem('user');
     if (candidatData) {
       this.candidat = JSON.parse(candidatData);
+      this.imageSource = `${this.candidat.descPhoto},${this.candidat.photoBase64}`;
     }
   }
-  getImageFromLocalStorage(): string {
-    // Remplacez "chemin_image_localstorage" par la clé réelle que vous utilisez pour stocker le chemin de l'image dans le localStorage
-    const imagePath = localStorage.getItem('user.photoBase64');
-    return imagePath || '././assets/img/noprofil.jpg'; // Utilisez une image par défaut si le chemin n'est pas trouvé
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    this.candidat.photoBase64 = null;
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.candidat.descPhoto = e.target.result.split(',')[0];
+        console.log( e.target.result.split(',')[0])
+
+        this.candidat.photoBase64 = e.target.result.split(',')[1];
+        console.log(e.target.result.split(',')[1])
+        this.imageSource = `${this.candidat.descPhoto},${this.candidat.photoBase64}`;
+        console.log( this.imageSource)
+      };
+      reader.readAsDataURL(file);
+
+
+    }
   }
 
-  updateCandidate(): void {
-    // Mettre à jour les données dans le localStorage
+
+  updateCandidate(val:any){
+
     localStorage.setItem('user', JSON.stringify(this.candidat));
 
-    // Simuler une mise à jour côté serveur avec HttpClient
-    const apiUrl = 'http://127.0.0.1:8080/api/';
-    this.http.put(apiUrl, this.candidat).subscribe(response => {
-      console.log('Candidat mis à jour avec succès dans la base de données', response);
+    this.service.updateCandidate(this.candidat).subscribe(response => {
     }, error => {
-      console.error('Erreur lors de la mise à jour du candidat dans la base de données', error);
     });
+    this.router.navigate(['home'])
   }
+
 }

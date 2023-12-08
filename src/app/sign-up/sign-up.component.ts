@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 export class SignUpComponent {
   selectedFile: File | null = null;
   candidat: Candidat = new Candidat();
+  imageSource:string="././assets/img/noprofil.jpg";
 
   constructor(private signupService: ServiceCandidatService, private router: Router) { }
 
@@ -21,10 +22,14 @@ export class SignUpComponent {
     if (file) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
+        this.imageSource=e.target.result;
         this.candidat.descPhoto = e.target.result.split(',')[0];
         this.candidat.photoBase64 = e.target.result.split(',')[1];
       };
       reader.readAsDataURL(file);
+    }else{
+      this.imageSource="././assets/img/noprofil.jpg";
+
     }
   }
 
@@ -48,6 +53,8 @@ export class SignUpComponent {
 
     this.signupService.signUp(this.candidat).subscribe(() => {
       console.log("added");
+
     });
+   this.router.navigate(['home']);
   }
 }

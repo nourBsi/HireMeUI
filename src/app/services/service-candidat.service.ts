@@ -18,5 +18,10 @@ export class ServiceCandidatService {
     return this.http.post(this.link+"/addCandidat",candidat);
 
   }
-  
+  updateCandidate(candidat:Candidat): Observable<any>{
+    // console.log(JSON.stringify(candidat));
+
+    return this.http.put(this.link+"/updateCandidat",candidat);
+
+  }
 }

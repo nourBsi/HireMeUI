@@ -1,41 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<app-navbar></app-navbar>
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/profile.jpg">
-  <link rel="icon" type="image/png" href="../assets/img/profile.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Your Profile</title>
-</head>
-
-<body class="profile-page sidebar-collapse">
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="300">
-  <div class="container">
-    <div class="navbar-translate">
-      <a class="navbar-brand" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom" target="_blank">
-       Update Your Profile
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="navbar-toggler-icon fa-regular fa-bars"></i>
-      </button>
-    </div>
-    <div class="collapse navbar-collapse justify-content-end" id="navigation">
-      <ul class="navbar-nav">
-        <!-- Ajoutez d'autres éléments de navigation au besoin -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <i class="fas fa-bars fa-lg" style="color: black;"></i>
-          </a>
-        </li>        
-      </ul>
-    </div>      
-  </div>
-</nav>
-  <!-- End Navbar -->
-  <!-- Rest of your HTML content -->
   <div class="page-header page-header-xs" data-parallax="true"
     style="background-image: url('../assets/img/profile.jpg');">
     <div class="filter"></div>
@@ -44,45 +8,51 @@
     <div class="container">
       <div class="owner">
         <div class="avatar">
-            <img [src]="getImageFromLocalStorage()" width="100" height="100">
+            <img [src]="imageSource"  height="150" width="148">
             <div class="round">
-                <input type="file" >
+                <input type="file" (change)="onFileSelected($event)">
                 <i class="fa fa-camera" style="color: #fff;"></i>
             </div>
         </div>
-           
-        <div class="form-floating mb-2 mt-2">
-            <input class="form-control" [(ngModel)]="candidat.prenom" id="prenom" name="prenom" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-            <label for="prenom">First name</label>
-            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-        </div>
-        <div class="form-floating mb-2 mt-2">
-            <input class="form-control" [(ngModel)]="candidat.nom" id="nom" name="nom" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-            <label for="nom">First name</label>
-            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-        </div>
-        <div class="form-floating mb-2 mt-2">
-            <input class="form-control" [(ngModel)]="candidat.secteur" id="secteur" name="secteur" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-            <label for="secteur">secteur</label>
-            <div class="invalid-feedback" data-sb-feedback="name:secteur">A name is required.</div>
-        </div>
-        <div class="form-floating mb-2 mt-2">
-            <input class="form-control" [(ngModel)]="candidat.description" id="description" name="description" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-            <label for="description">description</label>
-            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-        </div>
-        
-      </div>
-      <div class="row">
-        <div class="col-md-6 ml-auto mr-auto text-center">
-          <p>{{ candidat.description }}</p>
-          <br />
-          <div class="d-grid"><button class="btn btn-primary btn-lg " id="submitButton" type="submit" >Submit</button></div>
-        </div>
-      </div>
-      <br />
-    </div>
-  </div>
-</body>
 
-</html>
+   <form #updateCandidateForm="ngForm" id="updateCandidate"  (ngSubmit)="updateCandidate(updateCandidateForm.value)">
+     Update your profile
+     <div class="form-floating mb-2 mt-2 w-50 col-md-3 offset-md-3">
+       <textarea class="form-control"  id="description" [(ngModel)]="candidat.description" name="description" type="text" placeholder="Enter your bio..." data-sb-validations="required" rows="4"></textarea>
+       <label for="description">Bio</label>
+       <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+     </div>
+     <div class="form-floating mb-2 mt-2">
+       <input class="form-control" [(ngModel)]="candidat.prenom" id="prenom" name="prenom" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+       <label for="prenom">First name</label>
+       <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+     </div>
+     <div class="form-floating mb-2 mt-2">
+       <input class="form-control" [(ngModel)]="candidat.nom" id="nom" name="nom" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+       <label for="nom">First name</label>
+       <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+     </div>
+     <div class="form-floating mb-2 mt-2">
+       <input class="form-control" [(ngModel)]="candidat.secteur" id="secteur" name="secteur" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+       <label for="secteur">secteur</label>
+       <div class="invalid-feedback" data-sb-feedback="name:secteur">A name is required.</div>
+     </div>
+
+     <div class="form-floating mb-2 mt-2">
+       <input class="form-control" [(ngModel)]="candidat.date_naissance" id="date_naissance" name="date_naissance" type="date" placeholder="Enter your date of birth..." data-sb-validations="required" />
+       <label for="date_naissance">Date of birth</label>
+       <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+     </div>
+     <div class="row">
+       <div class="d-grid"><button class="btn btn-primary btn-lg " id="submitButton" type="submit" >Submit</button></div>
+     </div>
+     <br />
+
+   </form>
+
+
+
+      </div>
+
+  </div>
+  </div>

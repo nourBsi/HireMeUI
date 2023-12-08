@@ -12,9 +12,13 @@ export class RecruteurServiceService {
 
   constructor(private http: HttpClient) { }
   signUpr(recruteur:Recruteur): Observable<any>{
-    // console.log(JSON.stringify(candidat));
 
     return this.http.post(this.link+"/addRecruteur",recruteur);
+
+  }
+  updateRecruiter(recruteur:Recruteur ): Observable<any>{
+
+    return this.http.put(this.link+"/updateRecruteur",recruteur);
 
   }
 }

@@ -18,6 +18,9 @@ import {DatePipe} from "@angular/common";
 import { SignInRComponent } from './sign-in-r/sign-in-r.component';
 import { HomeRComponent } from './home-r/home-r.component';
 import { NavbarRComponent } from './navbar-r/navbar-r.component';
+import {ProfileComponent} from "./profile/profile.component";
+import { ProfileRComponent } from './profile-r/profile-r.component';
+import { UpdateRecruteurComponent } from './update-recruteur/update-recruteur.component';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { NavbarRComponent } from './navbar-r/navbar-r.component';
     SignInRComponent,
     HomeRComponent,
     NavbarRComponent,
-
+ProfileComponent,
+ProfileRComponent,
+UpdateRecruteurComponent
 
   ],
   imports: [
@@ -47,6 +52,9 @@ import { NavbarRComponent } from './navbar-r/navbar-r.component';
   providers: [
     [DatePipe]
 
+  ],
+  exports: [
+    NavbarComponent
   ],
   bootstrap: [AppComponent]
 })
