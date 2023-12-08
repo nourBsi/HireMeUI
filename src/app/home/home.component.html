@@ -1,29 +1,21 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <!-- Inclure le lien CDN de Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <!-- Vos autres imports CSS et autres en-têtes -->
-</head>
-<body>
-    <div th:each="offre : ${offres}">
-        <div class="card text-center mx-5">
+<app-navbar></app-navbar>
+
+
+
+    <div class="mt-3">
+        <div class="card text-center mx-5"  *ngFor="let offre of Offres; let i = index">
             <div class="card-header">
                 <!-- Ajoutez une icône de cœur en haut à droite -->
                 <i class="fa-solid fa-heart" style="float: right; color: red; font-size: 24px;"></i>
-                <h5 class="card-title" th:text="${offre.titre}">titre</h5>
-            </div>        
-            <div class="card-body">
-                <h5 class="card-title" th:text="${offre.nom_societe}"> société</h5>
-                <p class="card-text" th:text="${offre.description}"> DESCRIPTION.</p>
-                <p class="card-text" th:text="${offre.nbr_max_condidat}">nbr_max_condidat</p>
-                <p class="card-text" th:text="${offre.lieu}">lieu</p>
-                <a href="#" class="btn btn-primary"> Postuler</a>
+                <h5 class="card-title" >{{offre.titre}}</h5>
             </div>
-            <div class="card-footer text-muted" th:text="${offre.datexpiration}">il expire pendant</div>
+            <div class="card-body">
+                <h5 class="card-title" > {{offre.nom_societe}}</h5>
+                <p class="card-text"> {{offre.description}}</p>
+                <p class="card-text" >{{offre.nbr_max_candidats}}</p>
+                <p class="card-text">{{offre.lieu}}</p>
+                <a class="btn btn-primary" (click)="postuler()"> Postuler</a>
+            </div>
+            <div class="card-footer text-muted" >il expire le {{offre.date_expiration| date: 'EEEE, MMMM d, y'}}</div>
         </div>
     </div>
-    
-    
-</body>
-</html>

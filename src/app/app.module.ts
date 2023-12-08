@@ -21,7 +21,7 @@ import { NavbarRComponent } from './navbar-r/navbar-r.component';
 import {ProfileComponent} from "./profile/profile.component";
 import { ProfileRComponent } from './profile-r/profile-r.component';
 import { UpdateRecruteurComponent } from './update-recruteur/update-recruteur.component';
-
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -47,7 +47,8 @@ UpdateRecruteurComponent
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [
     [DatePipe]

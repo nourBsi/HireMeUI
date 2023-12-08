@@ -50,7 +50,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [ProfileGuard]
   },
   {
      path: 'update-candidate',
