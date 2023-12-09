@@ -7,7 +7,6 @@ import {JoinUsComponent} from "./join-us/join-us.component";
 import {SignInCComponent} from "./sign-in-c/sign-in-c.component";
 import {ProfileGuard} from "../profile.guard";
 import {ProfileGuard2} from "../profile.guard2";
-
 import {SignUpRComponent} from "./sign-up-r/sign-up-r.component";
 import {SignInRComponent} from "./sign-in-r/sign-in-r.component";
 import {HomeRComponent} from "./home-r/home-r.component";
@@ -15,6 +14,7 @@ import { UpdateCandidateComponent } from './update-candidate/update-candidate.co
 import {ProfileRComponent} from "./profile-r/profile-r.component";
 import {UpdateRecruteurComponent} from "./update-recruteur/update-recruteur.component";
 import {CandidaturesComponent} from "./candidatures/candidatures.component";
+import { DetailsComponent } from './details/details.component';
 
 
 const routes: Routes = [
@@ -76,6 +76,11 @@ const routes: Routes = [
   {
     path: 'candidatures',
     component: CandidaturesComponent,
+  }
+  ,
+  {
+    path: 'details',
+    component: DetailsComponent,
   }
 
 ];

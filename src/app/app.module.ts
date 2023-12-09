@@ -28,6 +28,8 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { MultiSelectModule } from 'primeng/multiselect';
 import {CellEditor} from "primeng/table";
+import { DetailsComponent } from './details/details.component';
+import { FavorisComponent } from './favoris/favoris.component';
 
 
 
@@ -48,7 +50,9 @@ import {CellEditor} from "primeng/table";
 ProfileComponent,
 ProfileRComponent,
 UpdateRecruteurComponent,
-CandidaturesComponent
+CandidaturesComponent,
+DetailsComponent,
+FavorisComponent
 
   ],
   imports: [

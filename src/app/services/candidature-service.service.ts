@@ -13,4 +13,7 @@ export class CandidatureServiceService {
   getCandidatures(): Observable<any>{
     return this.http.get(this.link+"/Candidatures");
   }
+  getCandidatById(id: number): Observable<any> {
+    return this.http.get(this.link + "/Candidats/" + id);
+  }
 }

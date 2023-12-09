@@ -4,7 +4,7 @@
         <div class="card text-center mx-5"  *ngFor="let offre of Offres; let i = index">
             <div class="card-header">
                 <!-- Ajoutez une icône de cœur en haut à droite -->
-                <i class="fa-solid fa-heart" style="float: right; color: red; font-size: 24px;"></i>
+                <i class="fas fa-heart" style="float: right; color: red; font-size: 24px;" (click)="favoris()"></i>
                 <h5 class="card-title" >{{offre.titre}}</h5>
             </div>
             <div class="card-body">

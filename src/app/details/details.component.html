@@ -1,0 +1,45 @@
+
+<app-navbar></app-navbar>
+  <!-- End Navbar -->
+  <!-- Rest of your HTML content -->
+  <div class="page-header page-header-xs" data-parallax="true"
+    style="background-image: url('../assets/img/profile.jpg');">
+    <div class="filter"></div>
+  </div>
+  <div class="section profile-content">
+    <div class="container">
+      <div class="owner">
+        <div class="avatar">
+          <img [src]="imageSource" alt="Pofile picture" class="img-circle img-no-padding img-responsive">
+        </div>
+        <div class="name">
+          <h4 class="title">{{candidat.prenom}} {{candidat.nom}}</h4>
+          <h6 class="description">{{candidat.secteur}}</h6>
+        </div>
+
+      </div>
+      <div class="row">
+
+
+        <div class="col-md-6 offset-md-3 text-center">
+          <p>          <i class="fa-solid fa-quote-left text-left" ></i>
+            {{candidat.description}}            <i class="fa-solid fa-quote-right text-right" ></i>
+          </p>
+          <br />
+          <button class="btn btn-outline-secondary" ><i class="fa-solid fa-file-arrow-down"></i> Download CV</button>
+        </div>
+      </div>
+      <br />
+      <div class="row justify-content-center">
+        <div class="col-md-5 text-center">
+          <i class="fa fa-birthday-cake" aria-hidden="true"></i> birthday is on
+          {{candidat.date_naissance | date: 'EEEE, MMMM d, y'}}
+        </div>
+        <div class="col-md-5 text-center">
+          <i class="fa-solid fa-handshake"></i> joined on
+          {{candidat.date_inscri | date: 'EEEE, MMMM d, y'}}
+        </div>
+      </div>
+    </div>
+  </div>
+
