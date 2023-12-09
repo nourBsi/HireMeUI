@@ -1,8 +1,10 @@
+
 import { Component, OnInit  } from '@angular/core';
 import { LoginServiceService } from '../services/login-service.service';
 import { Router } from '@angular/router';
 import { Candidat } from '../models/Candidat.model';
 import { CandidatureServiceService } from '../services/candidature-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -14,18 +16,26 @@ export class DetailsComponent implements OnInit {
   candidats: Candidat[] = [];
 
 
-constructor(private candidatureService: CandidatureServiceService) {}
+constructor(private candidatureService: CandidatureServiceService,
+  private route: ActivatedRoute) {}
 
-ngOnInit(): void {
-  this.candidatureService.getCandidatById(this.candidat.id_condidat).subscribe(
-    response => {
-      console.log(response);
-      this.candidat = response; 
-    },
-    error => {
-      console.error(error);
+  ngOnInit(): void {
+    // Utilisez le service ActivatedRoute pour obtenir la valeur du paramètre 'id'
+    const id = this.route.snapshot.paramMap.get('id');
+
+
+    if (id) {
+      const idNumber = +id;
+      this.candidatureService.getCandidatById(idNumber).subscribe(
+        response => {
+          console.log(response);
+          this.candidats = response; 
+        },
+        error => {
+          console.error(error);
+        }
+      );
     }
-  );
-}
 
+}
 }

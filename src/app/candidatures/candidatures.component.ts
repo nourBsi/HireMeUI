@@ -45,8 +45,8 @@ export class CandidaturesComponent implements OnInit{
     this.primengConfig.ripple = true;
   }
   navigateToDetails(id:number){
-this.router.navigate(['detailsCandidat']);
-  }
+    this.router.navigate(['details', id]);
+    }
   onRowEditInit(candidature:Candidature,index :number){
   this.clonedCandidatures[index]={ ...this.candidatures[index]}
   }
