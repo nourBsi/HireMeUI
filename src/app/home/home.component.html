@@ -14,8 +14,8 @@
                 <p class="card-text"> {{offre.description}}</p>
                 <p class="card-text" >{{offre.nbr_max_candidats}}</p>
                 <p class="card-text">{{offre.lieu}}</p>
-                <a class="btn btn-primary" (click)="postuler()"> Postuler</a>
+                <a class="btn btn-primary" (click)="postuler()"> Apply</a>
             </div>
-            <div class="card-footer text-muted" >il expire le {{offre.date_expiration| date: 'EEEE, MMMM d, y'}}</div>
+            <div class="card-footer text-muted" >This offer expires {{offre.date_expiration| date: 'EEEE, MMMM d, y'}}</div>
         </div>
     </div>
