@@ -28,6 +28,15 @@
       <th pSortableColumn="candidat.nom">
         Last Name <p-sortIcon field="candidat.nom"></p-sortIcon>
       </th>
+      <th pSortableColumn="date">
+        Date <p-sortIcon field="date"></p-sortIcon>
+      </th>
+      <th pSortableColumn="offre">
+        Job offer <p-sortIcon field="offreEmploie.titre"></p-sortIcon>
+      </th>
+      <th pSortableColumn="etat">
+        state <p-sortIcon field="etat"></p-sortIcon>
+      </th>
 
 
       <th style="width:8rem"></th>
@@ -38,12 +47,19 @@
                let-ri="rowIndex">
     <tr [pEditableRow]="candidature"  >
 
+
       <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
         <p-cellEditor>
-          <ng-template pTemplate="input">
-            <input pInputText type="text"
-                   [(ngModel)]="candidature.candidat.nom" />
+          <ng-template pTemplate="output" >
+
+           {{candidature.candidat.prenom}}
           </ng-template>
+
+
+        </p-cellEditor>
+      </td>
+      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+        <p-cellEditor>
           <ng-template pTemplate="output" >
             {{ candidature.candidat.nom }}
           </ng-template>
@@ -51,18 +67,50 @@
       </td>
       <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
         <p-cellEditor>
-          <ng-template pTemplate="input">
-            <input pInputText type="text"
-                   [(ngModel)]="candidature.candidat.prenom" />
-          </ng-template>
           <ng-template pTemplate="output" >
 
-           {{candidature.candidat.nom}}
+            {{candidature.date}}
           </ng-template>
 
 
         </p-cellEditor>
       </td>
+      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+        <p-cellEditor>
+          <ng-template pTemplate="output" >
+
+            {{candidature.offreEmploie.titre}}
+          </ng-template>
+
+
+        </p-cellEditor>
+      </td>
+      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <select pInputText [(ngModel)]="candidature.statut">
+              <option value="0">Pending</option>
+              <option value="1">Approved</option>
+              <option value="2">Refused</option>
+              <!-- Add more options as needed -->
+            </select>
+          </ng-template>
+          <ng-template pTemplate="output" >
+            <ng-container [ngSwitch]="candidature.statut">
+              <span *ngSwitchCase="0">Pending</span>
+              <span *ngSwitchCase="1">Approved</span>
+              <span *ngSwitchCase="2">Refused</span>
+              <!-- Add more cases as needed -->
+              <span *ngSwitchDefault>Unknown</span>
+            </ng-container>
+          </ng-template>
+
+
+        </p-cellEditor>
+      </td>
+
+
+
 
       <td style="text-align:center">
         <button *ngIf="!editing"

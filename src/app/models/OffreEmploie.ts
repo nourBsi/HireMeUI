@@ -1,3 +1,5 @@
+import {Recruteur} from "./Recruteur.model";
+
 export class OffreEmploie{
   titre:string;
   description:string;
@@ -8,5 +10,5 @@ export class OffreEmploie{
   nbr_max_candidats:number;
   nbr_post:number;
   etat:number;
-
+  recruteur:Recruteur;
 }
