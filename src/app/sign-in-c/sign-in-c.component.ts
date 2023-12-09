@@ -21,9 +21,12 @@ export class SignInCComponent {
     this.loginService.checkCandidate(this.candidat).subscribe(
         (data: Candidat) => {
           this.returnedCandidate = data;
-          window.localStorage.setItem('user', JSON.stringify(this.returnedCandidate));
-          console.log(this.returnedCandidate);
+          if(data){
+            window.localStorage.setItem('user', JSON.stringify(this.returnedCandidate));
+            console.log(this.returnedCandidate);
             this.router.navigate(['home']);
+          }
+
         },
         (error) => {
 

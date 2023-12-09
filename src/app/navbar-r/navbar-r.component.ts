@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar-r',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar-r.component.css']
 })
 export class NavbarRComponent {
-
+  constructor(private  router: Router) {
+  }
+  logOut(){
+    localStorage.clear();
+    this.router.navigate(['join-us']);
+  }
 }

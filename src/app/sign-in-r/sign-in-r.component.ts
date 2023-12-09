@@ -23,9 +23,12 @@ export class SignInRComponent {
     this.loginService.checkRecruteur(this.recruteur).subscribe(
       (data: Recruteur) => {
         this.returnedRecruteur = data;
-        window.localStorage.setItem('userr', JSON.stringify(this.returnedRecruteur));
-        console.log(this.returnedRecruteur);
-        this.router.navigate(['homer']);
+        if(data){
+          window.localStorage.setItem('userr', JSON.stringify(this.returnedRecruteur));
+          console.log(this.returnedRecruteur);
+          this.router.navigate(['homer']);
+        }
+
       },
       (error) => {
 
