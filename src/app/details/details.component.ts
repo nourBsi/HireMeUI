@@ -13,23 +13,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
   candidat: Candidat = new Candidat();
-  candidats: Candidat[] = [];
-
-
+  imageSource:string;
+  id:number;
 constructor(private candidatureService: CandidatureServiceService,
   private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     // Utilisez le service ActivatedRoute pour obtenir la valeur du paramètre 'id'
-    const id = this.route.snapshot.paramMap.get('id');
+     this.id =  this.route.snapshot.params['id'];
 
 
-    if (id) {
-      const idNumber = +id;
-      this.candidatureService.getCandidatById(idNumber).subscribe(
+    if (this.id) {
+
+      this.candidatureService.getCandidatById(this.id).subscribe(
         response => {
           console.log(response);
-          this.candidats = response; 
+          this.candidat = response;
+          this.imageSource=`${this.candidat.descPhoto},${this.candidat.photoBase64}`;
+          console.log(this.candidat)
         },
         error => {
           console.error(error);
