@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Candidature} from "../models/Candidature";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,10 @@ export class CandidatureServiceService {
 
   getCandidatures(): Observable<any>{
     return this.http.get(this.link+"/Candidatures");
+  }
+
+  updateCandidature(candidature:Candidature): Observable<any>{
+    return this.http.put(this.link+"/updateCandidature",candidature);
   }
   getCandidatById(id: number): Observable<any> {
     return this.http.get(this.link + "/Candidats/" + id);
