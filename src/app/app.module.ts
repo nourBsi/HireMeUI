@@ -22,6 +22,14 @@ import {ProfileComponent} from "./profile/profile.component";
 import { ProfileRComponent } from './profile-r/profile-r.component';
 import { UpdateRecruteurComponent } from './update-recruteur/update-recruteur.component';
 import {CommonModule} from "@angular/common";
+import { CandidaturesComponent } from './candidatures/candidatures.component';
+import { TableModule } from 'primeng/table';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { MultiSelectModule } from 'primeng/multiselect';
+import {CellEditor} from "primeng/table";
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +47,8 @@ import {CommonModule} from "@angular/common";
     NavbarRComponent,
 ProfileComponent,
 ProfileRComponent,
-UpdateRecruteurComponent
+UpdateRecruteurComponent,
+CandidaturesComponent
 
   ],
   imports: [
@@ -48,10 +57,16 @@ UpdateRecruteurComponent
     FormsModule,
     NgbModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    TableModule,
+    ButtonModule,
+    InputTextModule,
+    MultiSelectModule,
+
   ],
   providers: [
-    [DatePipe]
+    [DatePipe,
+      CellEditor]
 
   ],
   exports: [

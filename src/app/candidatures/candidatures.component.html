@@ -1,0 +1,93 @@
+<app-navbar-r></app-navbar-r>
+<div class=" panel-header-sm">
+</div>
+<p-table #dt [value]="candidatures"
+         dataKey="index"
+         editMode="row"
+         responsiveLayout="scroll"
+         [globalFilterFields]="['candidat.penom', 'candidat.nom']"
+>
+  <ng-template pTemplate="caption">
+    <div class="table-header">
+     application list
+      <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text"
+                       (input)=
+                         "applyFilterGlobal($event, 'contains')"
+                       placeholder="Global search" />
+            </span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+
+      <th pSortableColumn="candidat.penom">
+        First name <p-sortIcon field="candidat.penom"></p-sortIcon>
+      </th>
+      <th pSortableColumn="candidat.nom">
+        Last Name <p-sortIcon field="candidat.nom"></p-sortIcon>
+      </th>
+
+
+      <th style="width:8rem"></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body"
+               let-candidature let-editing="editing"
+               let-ri="rowIndex">
+    <tr [pEditableRow]="candidature"  >
+
+      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text"
+                   [(ngModel)]="candidature.candidat.nom" />
+          </ng-template>
+          <ng-template pTemplate="output" >
+            {{ candidature.candidat.nom }}
+          </ng-template>
+        </p-cellEditor>
+      </td>
+      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text"
+                   [(ngModel)]="candidature.candidat.prenom" />
+          </ng-template>
+          <ng-template pTemplate="output" >
+
+           {{candidature.candidat.nom}}
+          </ng-template>
+
+
+        </p-cellEditor>
+      </td>
+
+      <td style="text-align:center">
+        <button *ngIf="!editing"
+                pButton pRipple type="button"
+                pInitEditableRow icon="pi pi-pencil"
+                (click)="onRowEditInit(candidature, ri)"
+                class="p-button-rounded p-button-text">
+        </button>
+        <button *ngIf="editing"
+                pButton pRipple type="button"
+                pSaveEditableRow icon="pi pi-check"
+                (click)="onRowEditSave(candidature, ri)"
+                class="p-button-rounded
+                                 p-button-text
+                                 p-button-success mr-2">
+        </button>
+        <button *ngIf="editing"
+                pButton pRipple type="button"
+                pCancelEditableRow icon="pi pi-times"
+                (click)="onRowEditCancel(candidature, ri)"
+                class="p-button-rounded
+                       p-button-text
+                       p-button-danger">
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

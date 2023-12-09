@@ -14,6 +14,7 @@ import {HomeRComponent} from "./home-r/home-r.component";
 import { UpdateCandidateComponent } from './update-candidate/update-candidate.component';
 import {ProfileRComponent} from "./profile-r/profile-r.component";
 import {UpdateRecruteurComponent} from "./update-recruteur/update-recruteur.component";
+import {CandidaturesComponent} from "./candidatures/candidatures.component";
 
 
 const routes: Routes = [
@@ -70,6 +71,11 @@ const routes: Routes = [
     path: 'update-recruteur',
     component: UpdateRecruteurComponent,
     canActivate: [ProfileGuard2]
+  }
+  ,
+  {
+    path: 'candidatures',
+    component: CandidaturesComponent,
   }
 
 ];
