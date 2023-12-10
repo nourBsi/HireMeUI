@@ -31,6 +31,8 @@ import {CellEditor} from "primeng/table";
 import { DetailsComponent } from './details/details.component';
 import { FavorisComponent } from './favoris/favoris.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import { PostulerComponent } from './postuler/postuler.component';
+import { AddoffreComponent } from './addoffre/addoffre.component';
 
 
 
@@ -54,7 +56,9 @@ ProfileRComponent,
 UpdateRecruteurComponent,
 CandidaturesComponent,
 DetailsComponent,
-FavorisComponent
+FavorisComponent,
+PostulerComponent,
+AddoffreComponent
 
   ],
   imports: [
