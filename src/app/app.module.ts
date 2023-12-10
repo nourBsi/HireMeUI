@@ -32,6 +32,7 @@ import { DetailsComponent } from './details/details.component';
 import { FavorisComponent } from './favoris/favoris.component';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import { PostulerComponent } from './postuler/postuler.component';
+import { AddoffreComponent } from './addoffre/addoffre.component';
 
 
 
@@ -56,7 +57,8 @@ UpdateRecruteurComponent,
 CandidaturesComponent,
 DetailsComponent,
 FavorisComponent,
-PostulerComponent
+PostulerComponent,
+AddoffreComponent
 
   ],
   imports: [

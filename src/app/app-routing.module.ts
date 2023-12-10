@@ -16,6 +16,8 @@ import {UpdateRecruteurComponent} from "./update-recruteur/update-recruteur.comp
 import {CandidaturesComponent} from "./candidatures/candidatures.component";
 import { DetailsComponent } from './details/details.component';
 import { PostulerComponent } from './postuler/postuler.component';
+import { AddoffreComponent } from './addoffre/addoffre.component';
+
 
 
 
@@ -90,6 +92,11 @@ const routes: Routes = [
   {
     path: 'postuler',
     component: PostulerComponent,
+  }
+  ,
+  {
+    path: 'addoffre',
+    component: AddoffreComponent,
   }
 
 ];

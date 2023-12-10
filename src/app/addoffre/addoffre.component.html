@@ -1,0 +1,98 @@
+<app-navbar-r></app-navbar-r>
+
+<section class="bg-light vh-100 py-5">
+    <div class="container-fluid   px-5">
+      <div class="text-center mb-5">
+        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+        <h2 class="fw-bolder pt-5">Add Offre</h2>
+      </div>
+      <div class="row gx-5 justify-content-center">
+        <div class="col-lg-6">
+          <!-- * * * * * * * * * * * * * * *-->
+          <!-- * * SB Forms Contact Form * *-->
+          <!-- * * * * * * * * * * * * * * *-->
+          <!-- This form is pre-integrated with SB Forms.-->
+          <!-- To make this form functional, sign up at-->
+          <!-- https://startbootstrap.com/solution/contact-forms-->
+          <!-- to get an API token!-->
+          <form id="loginForm" data-sb-form-api-token="API_TOKEN" >
+  
+  
+            <!-- Email address input-->
+            <div class="form-floating mb-2 pt-2">
+              <input class="form-control" ngModel id="description" name="description" type="text" placeholder="description" data-sb-validations="required,description" />
+              <label for="description">description</label>
+              <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+            </div>
+  
+            <!-- password input-->
+  
+            <div class="form-floating mb-2 py-2">
+              <input class="form-control" ngModel id="date" name="date" type="date" placeholder="date" data-sb-validations="required" />
+              <label for="date">Date date_expiration</label>
+              <div class="invalid-feedback" data-sb-feedback="phone:required">The password  is required.</div>
+  
+            </div>
+
+              
+            <div class="form-floating mb-2 py-2">
+                <input class="form-control" ngModel id="Lieu" name="Lieu" type="text" placeholder="Lieu" data-sb-validations="required" />
+                <label for="Lieu">Lieu</label>
+    
+            </div>
+
+            <div class="form-floating mb-2 py-2">
+                <input class="form-control" ngModel id="nbr" name="nbr" type="number" placeholder="nbr" data-sb-validations="required" />
+                <label for="nbr">nbr_post</label>
+    
+            </div>
+            <div class="form-floating mb-2 py-2">
+                <input class="form-control" ngModel id="nbr_m" name="nbr_m" type="number" placeholder="nbr_m" data-sb-validations="required" />
+                <label for="nbr_m">nbr_max_candidats</label>
+    
+            </div>
+
+            <div class="form-floating mb-2 py-2">
+                <input class="form-control" ngModel id="nom_societe" name="nom_societe" type="text" placeholder="nom_societe" data-sb-validations="required" />
+                <label for="nom_societe"> nom_societe</label>
+    
+            </div>
+
+            <div class="form-floating mb-2 py-2">
+                <input class="form-control" ngModel id="titre" name="titre" type="text" placeholder="titre" data-sb-validations="required" />
+                <label for="titre"> titre</label>
+    
+            </div>
+            <div class="form-floating mb-2 py-2">
+                <input class="form-control" ngModel id="etat" name="etat" type="number" placeholder="etat" data-sb-validations="required" />
+                <label for="etat"> etat</label>
+    
+            </div>
+
+  
+  
+            <!-- Submit success message-->
+            <!---->
+            <!-- This is what your users will see when the form-->
+            <!-- has successfully submitted-->
+            <div class="d-none " id="submitSuccessMessage">
+              <div class="text-center mb-3 pt-2">
+                <div class="fw-bolder">Form submission successful!</div>
+              
+                <br />
+                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+              </div>
+            </div>
+            <!-- Submit error message-->
+            <!---->
+            <!-- This is what your users will see when there is-->
+            <!-- an error submitting the form-->
+            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+            <!-- Submit Button-->
+            <div class="d-grid"><button class="btn btn-primary btn-lg " id="submitButton" type="submit" >Submit</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
