@@ -1,6 +1,7 @@
 import {Recruteur} from "./Recruteur.model";
 
 export class OffreEmploie{
+  id_offre:number;
   titre:string;
   description:string;
   lieu:string;

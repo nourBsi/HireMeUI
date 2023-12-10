@@ -10,7 +10,7 @@
     <div class="container">
       <div class="owner">
         <div class="avatar">
-          <img [src]="imageSource" alt="Pofile picture" class="img-circle img-no-padding img-responsive">
+          <img [src]="imageSource" alt="Pofile picture" class="img-circle img-no-padding img-responsive" height="150" width="149">
         </div>
         <div class="name">
           <h4 class="title">{{candidat.prenom}} {{candidat.nom}}</h4>
@@ -40,6 +40,14 @@
           {{candidat.date_inscri | date: 'EEEE, MMMM d, y'}}
         </div>
       </div>
+    </div>
+
+    <hr>
+    <p class="h1 text-center">Your favorites</p>
+
+    <hr>
+    <div *ngIf="showComponent">
+      <app-favoris></app-favoris>
     </div>
   </div>
 

@@ -1,1 +1,18 @@
-<p>favoris works!</p>
+<div class="mt-3">
+  <div class="card text-center mx-5 mt-4"  *ngFor="let offre of candidat.favoris; let i = index">
+    <div class="card-header ">
+      <!-- Ajoutez une icône de cœur en haut à droite -->
+
+      <button class="btn" (click)="remove(offre.id_offre)" style="float: right; color: red; font-size: 25px;background-color:transparent;"> <i class="fa-solid fa-xmark"  ></i></button>
+      <h5 class="card-title mt-2" >{{offre.titre}}</h5>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title" > {{offre.nom_societe}}</h5>
+      <p class="card-text"> {{offre.description}}</p>
+      <p class="card-text" >{{offre.nbr_max_candidats}}</p>
+      <p class="card-text">{{offre.lieu}}</p>
+      <a class="btn btn-primary" (click)="postuler()"> Apply</a>
+    </div>
+    <div class="card-footer text-muted" >This offer expires {{offre.date_expiration| date: 'EEEE, MMMM d, y'}}</div>
+  </div>
+</div>

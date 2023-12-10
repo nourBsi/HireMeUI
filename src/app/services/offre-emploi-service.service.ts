@@ -15,4 +15,7 @@ export class OffreEmploiServiceService {
   getOffres():Observable<any>{
    return this.http.get(this.link+"/OffreEmplois");
   }
+  ajouterFavoris(offre:OffreEmploie,id:number):Observable<any>{
+    return this.http.put(this.link+"/addFavorite/"+id,offre);
+  }
 }

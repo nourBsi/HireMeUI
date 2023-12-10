@@ -1,5 +1,7 @@
+import {OffreEmploie} from "./OffreEmploie";
+
 export class Candidat {
-  id_condidat: number;
+  id_candidat: number;
   prenom: string;
   nom: string;
   email: string;
@@ -12,6 +14,7 @@ export class Candidat {
   Entreprise:String
   photoBase64: File|null;
   date_inscri:Date;
+  favoris:OffreEmploie[];
   constructor() {
   }
 }

@@ -11,23 +11,25 @@ import { Candidat } from '../models/Candidat.model';
 export class ProfileComponent implements OnInit {
   candidat: Candidat = new Candidat();
   imageSource: string;
-
+showComponent:boolean=false;
   constructor(private config: LoginServiceService) {}
 
   ngOnInit(): void {
     // Fetch user profile data from localStorage
     const storedCandidat = localStorage.getItem('user');
-  
+
     if (storedCandidat) {
       this.candidat = JSON.parse(storedCandidat);
-  
 
+  if(this.candidat.favoris){
+    this.showComponent=true;
+  }
       this.imageSource = `${this.candidat.descPhoto},${this.candidat.photoBase64}`;
       // Vous pouvez également stocker imageSource dans localStorage si nécessaire
       localStorage.setItem('imageSource', this.imageSource);
     } else {
       console.error('User data not found in localStorage');
-     
+
     }
   }
 
