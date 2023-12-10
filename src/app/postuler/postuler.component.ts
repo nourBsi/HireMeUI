@@ -9,15 +9,12 @@ import { Candidature } from '../models/Candidature';
 })
 export class PostulerComponent implements OnInit {
   constructor(private candidatureService: CandidatureServiceService) {}
-
-  candidature = {
-    statut: 0,
-    cv: null,
-    cvFileName: '',
-    candidat: null,
-    offre: null,
-    date: new Date().toISOString().split('T')[0]
-  };
+  candidature: Candidature = new Candidature();
+    statut= 0;
+    cv: null;
+    cvFileName: '';
+    candidat: null;
+    offre: null;
 
   ngOnInit() {
     console.log('Le composant Postuler a été initialisé.');
@@ -26,7 +23,7 @@ export class PostulerComponent implements OnInit {
 
 
   postuler() {
-    this.candidatureService.addCandidature(this.candidature, File).subscribe(
+    this.candidatureService.addCandidature(this.candidature, this.cv).subscribe(
       response => {
         console.log('Candidature ajoutée avec succès', response);
 
