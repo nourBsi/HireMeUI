@@ -18,4 +18,8 @@ export class OffreEmploiServiceService {
   ajouterFavoris(offre:OffreEmploie,id:number):Observable<any>{
     return this.http.put(this.link+"/addFavorite/"+id,offre);
   }
+  removeFavoris(id_favoris: number, id_candidat: number): Observable<any> {
+    return this.http.put(this.link+"/deleteFavorite/"+id_candidat,id_favoris);
+  }
+
 }
