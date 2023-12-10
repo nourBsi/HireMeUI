@@ -24,18 +24,32 @@ export class CandidatureServiceService {
   getCandidatureById(id: number): Observable<any> {
     return this.http.get(this.link + "/Candidatures/" + id);
   }
-  addCandidature(candidature: Candidature, cvFile: File): Observable<any> {
-    // Créez un objet FormData pour envoyer le formulaire avec le fichier
+  addCandidature(
+    date: Date,
+    statut: number,
+    candidatId: number,
+    offreId: number,
+    cvFile: string,
+    cvFileName:string
+
+  ): Observable<any> {
+    // Create FormData for sending the form with the file
     const formData = new FormData();
-    formData.append('cvFile', cvFile);
-    formData.append('candidature', JSON.stringify(candidature));
+    const formattedDate = date.toISOString().split('T')[0];
+    // Set the parameters
+    formData.append('date', formattedDate);
+    formData.append('statut', statut.toString());
+    formData.append('candidatId', candidatId.toString());
+    formData.append('offreId', offreId.toString());
+    formData.append('cvFile', cvFile)
+    formData.append('cvFileName' ,cvFileName);
 
-    // Ajoutez les en-têtes nécessaires pour le téléchargement de fichiers
-    const headers = new HttpHeaders({
-      'enctype': 'multipart/form-data'
-    });
 
-    // Envoyez la requête POST avec les données du formulaire
-    return this.http.post(this.link + "/addCandidature", formData, { headers: headers });
+    // Set the headers
+    const headers = {};
+
+
+    return this.http.post<any>(`${this.link}/addCandidature`, formData, { headers });
   }
+
 }

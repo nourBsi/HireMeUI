@@ -1,33 +1,19 @@
 <app-navbar-r></app-navbar-r>
 <div class="container mt-5">
-    <h2>Formulaire de Candidature</h2>
-  
+    <h2>Submission form </h2>
+
     <form >
       <!-- Champs pour le CV -->
       <div class="mb-3">
-        <label for="cv">CV (PDF uniquement) :</label>
-        <input type="file" class="form-control" id="cv" accept=".pdf"  required>
+        <label for="cv">CV (PDF only) :</label>
+        <input type="file" (change)="onFileSelected($event)" class="form-control" id="cv" accept=".pdf"  required>
       </div>
-  
-      <!-- Champs pour le statut -->
-      <div class="mb-3">
-        <label for="statut">Statut :</label>
-        <select class="form-control" id="statut" name="statut" required >
-          <option value="0" selected>Option par défaut</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
-      </div>
-      
-  
-      <!-- Champs pour la date -->
-      <div class="mb-3">
-        <label for="date">Date :</label>
-        <input type="date" class="form-control" id="date"  [(ngModel)]="candidature.date"  name="date" required>
-      </div>
-      
+
+
+
+
+
       <!-- Bouton de soumission du formulaire -->
-      <button type="submit" class="btn btn-primary" (click)="postuler()">Postuler</button>
+      <button type="submit" class="btn btn-primary" (click)="postuler()">Apply</button>
     </form>
   </div>
-  

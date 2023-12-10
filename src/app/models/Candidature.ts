@@ -4,7 +4,7 @@ import {OffreEmploie} from "./OffreEmploie";
 export class Candidature{
   date:Date;
   statut:number;
-  cv:Blob;
+  cv:string;
   cvFileName:string;
   candidat:Candidat;
   offre: OffreEmploie;

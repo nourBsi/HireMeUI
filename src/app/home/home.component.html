@@ -12,7 +12,7 @@
                 <p class="card-text"> {{offre.description}}</p>
                 <p class="card-text" >{{offre.nbr_max_candidats}}</p>
                 <p class="card-text">{{offre.lieu}}</p>
-                <a class="btn btn-primary" [routerLink]="['/postuler']">Apply</a>
+                <a class="btn btn-primary" [routerLink]="['/postuler',offre.id_offre]">Apply</a>
 
             </div>
             <div class="card-footer text-muted" >This offer expires {{offre.date_expiration| date: 'EEEE, MMMM d, y'}}</div>

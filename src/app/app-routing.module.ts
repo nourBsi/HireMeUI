@@ -90,7 +90,7 @@ const routes: Routes = [
   }
   ,
   {
-    path: 'postuler',
+    path: 'postuler/:id',
     component: PostulerComponent,
   }
   ,
