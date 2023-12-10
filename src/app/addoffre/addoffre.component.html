@@ -15,7 +15,7 @@
           <!-- To make this form functional, sign up at-->
           <!-- https://startbootstrap.com/solution/contact-forms-->
           <!-- to get an API token!-->
-          <form id="loginForm" data-sb-form-api-token="API_TOKEN" >
+          <form id="loginForm" data-sb-form-api-token="API_TOKEN" (ngSubmit)="ajouterOffre()"  >
   
   
             <!-- Email address input-->
@@ -64,10 +64,11 @@
     
             </div>
             <div class="form-floating mb-2 py-2">
-                <input class="form-control" ngModel id="etat" name="etat" type="number" placeholder="etat" data-sb-validations="required" />
-                <label for="etat"> etat</label>
+                <input class="form-control" ngModel id="niveau" name="niveau" type="text" placeholder="niveau" data-sb-validations="required" />
+                <label for="niveau"> niveau d'etude</label>
     
             </div>
+
 
   
   

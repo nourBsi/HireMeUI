@@ -95,7 +95,7 @@ const routes: Routes = [
   }
   ,
   {
-    path: 'addoffre',
+    path: 'addoffre/:id_recruteur',
     component: AddoffreComponent,
   }
 

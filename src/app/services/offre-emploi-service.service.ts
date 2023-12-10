@@ -21,4 +21,8 @@ export class OffreEmploiServiceService {
   getOffre(id:number):Observable<any>{
     return this.http.get(this.link+"/OffreEmplois/"+id);
   }
+
+  addOffreEmploi(offre: OffreEmploie): Observable<any> {
+    return this.http.post(this.link + "/addOffreEmploi", offre);
+  }
 }
