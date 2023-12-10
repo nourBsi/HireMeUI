@@ -7,18 +7,19 @@
          responsiveLayout="scroll"
          [globalFilterFields]="['candidat.penom', 'candidat.nom']"
 >
-  <ng-template pTemplate="caption">
-    <div class="table-header">
-     application list
-      <span class="p-input-icon-left">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text"
-                       (input)=
-                         "applyFilterGlobal($event, 'contains')"
-                       placeholder="Global search" />
-            </span>
+<ng-template pTemplate="caption">
+  <div class="table-header bg-dark text-white p-3"> 
+    <h5 class="mb-0">Candidates List</h5>
+    <div class="input-group">
+      <span class="input-group-text bg-white">
+        <i class="pi pi-search"></i>
+      </span>
+      <input pInputText type="text" class="form-control" 
+             (input)="applyFilterGlobal($event, 'contains')" 
+             placeholder="Global search" />
     </div>
-  </ng-template>
+  </div>
+</ng-template>
   <ng-template pTemplate="header">
     <tr>
 
