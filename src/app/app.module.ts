@@ -30,6 +30,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import {CellEditor} from "primeng/table";
 import { DetailsComponent } from './details/details.component';
 import { FavorisComponent } from './favoris/favoris.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+
 
 
 
@@ -66,6 +68,7 @@ FavorisComponent
     ButtonModule,
     InputTextModule,
     MultiSelectModule,
+    NgxExtendedPdfViewerModule,
 
   ],
   providers: [

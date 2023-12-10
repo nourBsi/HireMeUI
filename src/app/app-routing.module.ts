@@ -81,7 +81,7 @@ const routes: Routes = [
   }
   ,
   {
-    path: 'details/:id',
+    path: 'details/:id/:idcandidature',
     component: DetailsComponent,
   }
 

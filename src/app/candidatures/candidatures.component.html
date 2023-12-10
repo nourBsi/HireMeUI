@@ -48,7 +48,7 @@
     <tr [pEditableRow]="candidature"  >
 
 
-      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+      <td (click)="editing ? null : navigateToDetails(candidature.candidat.id_candidat,candidature.id_candidature)">
         <p-cellEditor>
           <ng-template pTemplate="output" >
 
@@ -58,14 +58,14 @@
 
         </p-cellEditor>
       </td>
-      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+      <td (click)="editing ? null : navigateToDetails(candidature.candidat.id_candidat,candidature.id_candidature)">
         <p-cellEditor>
           <ng-template pTemplate="output" >
             {{ candidature.candidat.nom }}
           </ng-template>
         </p-cellEditor>
       </td>
-      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+      <td (click)="editing ? null : navigateToDetails(candidature.candidat.id_candidat,candidature.id_candidature)">
         <p-cellEditor>
           <ng-template pTemplate="output" >
 
@@ -75,7 +75,7 @@
 
         </p-cellEditor>
       </td>
-      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+      <td (click)="editing ? null : navigateToDetails(candidature.candidat.id_candidat,candidature.id_candidature)">
         <p-cellEditor>
           <ng-template pTemplate="output" >
 
@@ -85,7 +85,7 @@
 
         </p-cellEditor>
       </td>
-      <td (click)="editing ? null : navigateToDetails(candidature.id_candidature)">
+      <td (click)="editing ? null : navigateToDetails(candidature.candidat.id_candidat,candidature.id_candidature)">
         <p-cellEditor>
           <ng-template pTemplate="input">
             <select pInputText [(ngModel)]="candidature.statut">
